@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank you — DRBackupCreator</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root{
+    --bg:#1e1e1e; --bg-deep:#161617; --panel:#252526; --panel-alt:#2b2b2d;
+    --border:#3a3a3e; --border-hot:#5c5c62; --text:#e8e8ea; --muted:#96969c;
+    --accent:#e43b44; --accent-hot:#f1525b; --success:#98c379;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; display:flex; flex-direction:column;
+    background:radial-gradient(1200px 600px at 50% -10%,#27272b 0%,var(--bg) 45%,var(--bg-deep) 100%);
+    color:var(--text);
+    font:16px/1.6 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  header.site{
+    border-bottom:1px solid var(--border);
+    background:rgba(22,22,23,.7);
+  }
+  .bar{max-width:1120px; margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; gap:14px}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:17px; color:inherit; text-decoration:none}
+  .brand img{width:28px; height:28px; border-radius:6px}
+  .lang{
+    margin-left:auto; border:1px solid var(--border); background:var(--panel); color:var(--text);
+    border-radius:8px; padding:6px 12px; font:inherit; font-size:13px; cursor:pointer;
+  }
+  .lang:hover{border-color:var(--border-hot); background:var(--panel-alt)}
+
+  main{flex:1; display:flex; align-items:center; justify-content:center; padding:48px 24px}
+  .card{
+    width:100%; max-width:620px; text-align:center;
+    background:linear-gradient(180deg,#26262a,#202022);
+    border:1px solid var(--border); border-radius:18px; padding:40px 34px 34px;
+    box-shadow:0 24px 60px rgba(0,0,0,.45);
+  }
+  .check{
+    width:56px; height:56px; margin:0 auto 18px; border-radius:16px;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(152,195,121,.14); color:var(--success); font-size:28px; line-height:1;
+  }
+  h1{font-size:clamp(22px,3.4vw,29px); line-height:1.25; margin:0 0 10px; letter-spacing:-.3px}
+  h1 .red{color:var(--accent)}
+  h1 .ver{color:var(--text); font-weight:700}
+  .lead{color:var(--muted); margin:0 auto 26px; max-width:47ch; font-size:15px}
+  .lead code{
+    background:var(--panel-alt); border:1px solid var(--border); border-radius:6px;
+    padding:1px 6px; font:12.5px Consolas,monospace; color:var(--text); white-space:nowrap;
+  }
+  .actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    padding:13px 22px; border-radius:10px; font-weight:600; text-decoration:none;
+    border:1px solid transparent; transition:.15s ease; font-size:15px;
+  }
+  .btn.primary{background:var(--accent); color:#fff}
+  .btn.primary:hover{background:var(--accent-hot); transform:translateY(-1px)}
+  .btn.ghost{border-color:var(--border); background:var(--panel); color:var(--text)}
+  .btn.ghost:hover{border-color:var(--border-hot); background:var(--panel-alt)}
+
+  .hint{font-size:13px; color:var(--muted); margin:22px 0 0}
+  .hint strong{color:var(--text)}
+  .back{display:inline-block; margin-top:18px; font-size:13.5px; color:var(--muted); text-decoration:none}
+  .back:hover{color:var(--text)}
+
+  .flow{
+    margin:26px auto 0; max-width:430px; text-align:left; font-size:14px; color:var(--muted);
+    border-top:1px solid var(--border); padding-top:20px;
+  }
+  .flow ol{margin:0; padding-left:20px}
+  .flow li{margin:6px 0}
+  .flow strong{color:var(--text); font-weight:600}
+
+  footer{color:var(--muted); font-size:12.5px; text-align:center; padding:20px 24px 28px}
+  footer a{color:inherit; text-decoration:none}
+  footer a:hover{color:var(--text)}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="./">
+      <img src="assets/icon.png" alt="">
+      DRBackupCreator
+    </a>
+    <button class="lang" id="lang" type="button" aria-label="Language">ES</button>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <div class="check" aria-hidden="true">✓</div>
+
+    <h1 id="title">Thank you for downloading <span class="red">DRBackupCreator</span>!</h1>
+
+    <p class="lead" id="lead">
+      Your installer is starting automatically. If nothing happens, use the button below.
+    </p>
+
+    <div class="actions">
+      <!-- Real links: these work with JavaScript disabled. -->
+      <a class="btn primary" id="mainBtn"
+         href="https://github.com/deltahelpers/DRBackupCreator/releases/latest/download/drbcWindowsInstaller.exe">
+        Download .exe
+      </a>
+      <a class="btn ghost" id="altBtn"
+         href="https://github.com/deltahelpers/DRBackupCreator/releases/latest/download/drbcWindowsInstaller.msi">
+        Download .msi
+      </a>
+    </div>
+
+    <p class="hint" id="hint">
+      <strong>SmartScreen:</strong> the installer is not code-signed yet, so Windows may ask you to
+      confirm — choose <strong>More info → Run anyway</strong>.
+    </p>
+
+    <noscript>
+      <p class="hint">JavaScript is disabled, so the download can't start by itself. Pick the
+      installer you want above — the links work exactly the same.</p>
+    </noscript>
+
+    <div class="flow">
+      <ol id="steps">
+        <li>Run the installer — Windows 10/11, 64-bit.</li>
+        <li>Open <strong>DRBackupCreator</strong> from the Start Menu.</li>
+        <li>Close DELTARUNE, then hit <strong>Create backup</strong>.</li>
+      </ol>
+    </div>
+
+    <a class="back" href="./" id="back">← Back to the site</a>
+  </div>
+</main>
+
+<footer>
+  <a href="https://github.com/deltahelpers/DRBackupCreator/releases" id="releases">Trouble downloading? Use the releases page</a>
+  <span id="legal">Not affiliated with Toby Fox.</span>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var FILES = {
+    exe: { name: "drbcWindowsInstaller.exe", fallbackSize: "2.5 MB" },
+    msi: { name: "drbcWindowsInstaller.msi", fallbackSize: "1.3 MB" }
+  };
+  var URLS = {
+    exe: "https://github.com/deltahelpers/DRBackupCreator/releases/latest/download/drbcWindowsInstaller.exe",
+    msi: "https://github.com/deltahelpers/DRBackupCreator/releases/latest/download/drbcWindowsInstaller.msi"
+  };
+  var API = "https://api.github.com/repos/deltahelpers/DRBackupCreator/releases/latest";
+
+  var dict = {
+    en: {
+      title: function (ver) {
+        return 'Thank you for downloading <span class="red">DRBackupCreator</span>' +
+               (ver ? ' <span class="ver">' + ver + '</span>' : '') + '!';
+      },
+      lead: function (type, file, size) {
+        return 'The <strong>' + type.toUpperCase() + '</strong> installer ' +
+               '(<code>' + file + '</code>, ' + size + ') is starting automatically. ' +
+               'If nothing happens, use the button below.';
+      },
+      main: "Download again",
+      alt: function (other) { return "Get the ." + other + " instead"; },
+      langBtn: "ES",
+      back: "← Back to the site",
+      legal: "Not affiliated with Toby Fox.",
+      releases: "Trouble downloading? Use the releases page",
+      hint: '<strong>SmartScreen:</strong> the installer is not code-signed yet, so Windows may ' +
+            'ask you to confirm — choose <strong>More info → Run anyway</strong>.',
+      steps: [
+        "Run the installer — Windows 10/11, 64-bit.",
+        'Open <strong>DRBackupCreator</strong> from the Start Menu.',
+        "Close DELTARUNE, then hit <strong>Create backup</strong>."
+      ]
+    },
+    es: {
+      title: function (ver) {
+        return '¡Gracias por descargar <span class="red">DRBackupCreator</span>' +
+               (ver ? ' <span class="ver">' + ver + '</span>' : '') + '!';
+      },
+      lead: function (type, file, size) {
+        return 'El instalador <strong>' + type.toUpperCase() + '</strong> ' +
+               '(<code>' + file + '</code>, ' + size + ') se está descargando automáticamente. ' +
+               'Si no ocurre nada, usa el botón de abajo.';
+      },
+      main: "Descargar de nuevo",
+      alt: function (other) { return "Descargar el ." + other + " en su lugar"; },
+      langBtn: "EN",
+      back: "← Volver al sitio",
+      legal: "Sin afiliación con Toby Fox.",
+      releases: "¿Problemas para descargar? Usa la página de versiones",
+      hint: '<strong>SmartScreen:</strong> el instalador aún no está firmado, así que Windows puede ' +
+            'pedirte confirmación — elige <strong>Más información → Ejecutar de todas formas</strong>.',
+      steps: [
+        "Ejecuta el instalador — Windows 10/11, 64 bits.",
+        'Abre <strong>DRBackupCreator</strong> desde el menú Inicio.',
+        "Cierra DELTARUNE y pulsa <strong>Crear backup</strong>."
+      ]
+    }
+  };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var params = new URLSearchParams(window.location.search);
+  var type = (params.get("f") || params.get("type") || "exe").toLowerCase() === "msi" ? "msi" : "exe";
+  var other = type === "msi" ? "exe" : "msi";
+  var version = "";
+  var size = FILES[type].fallbackSize;
+  var downloaded = false;
+
+  function lang() {
+    var saved = null;
+    try { saved = localStorage.getItem("drbc-lang"); } catch (e) {}
+    if (saved === "en" || saved === "es") return saved;
+    return (navigator.language || "en").toLowerCase().indexOf("es") === 0 ? "es" : "en";
+  }
+
+  function render() {
+    var d = dict[lang()];
+    var file = FILES[type].name;
+
+    document.documentElement.lang = lang();
+    $("title").innerHTML = d.title(version);
+    $("lead").innerHTML = d.lead(type, file, size);
+
+    var main = $("mainBtn");
+    main.href = URLS[type];
+    main.textContent = d.main;
+
+    var alt = $("altBtn");
+    alt.href = URLS[other];
+    alt.textContent = d.alt(other);
+
+    $("hint").innerHTML = d.hint;
+    $("lang").textContent = d.langBtn;
+    $("back").textContent = d.back;
+    $("legal").textContent = d.legal;
+    $("releases").textContent = d.releases;
+
+    var steps = $("steps");
+    steps.innerHTML = d.steps.map(function (s) { return "<li>" + s + "</li>"; }).join("");
+  }
+
+  function startDownload() {
+    if (downloaded) return;
+    downloaded = true;
+    // A real anchor click: with Content-Disposition: attachment the browser
+    // downloads the file and stays on this page.
+    var a = document.createElement("a");
+    a.href = URLS[type];
+    a.rel = "noopener";
+    a.style.display = "none";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  function humanSize(bytes) {
+    if (!bytes) return "";
+    var mb = bytes / (1024 * 1024);
+    return (mb >= 1 ? mb.toFixed(1) : mb.toFixed(2)) + " MB";
+  }
+
+  render();
+
+  // Version + size from the GitHub API; the page works without it.
+  if (window.fetch) {
+    fetch(API, { headers: { Accept: "application/vnd.github+json" } })
+      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then(function (rel) {
+        if (rel && rel.tag_name) version = rel.tag_name;
+        var assets = (rel && rel.assets) || [];
+        for (var i = 0; i < assets.length; i++) {
+          if (assets[i].name === FILES[type].name && assets[i].size) {
+            size = humanSize(assets[i].size);
+            break;
+          }
+        }
+        render();
+      })
+      .catch(function () { /* keep the static text */ });
+  }
+
+  // Give the page a beat to paint before the download starts.
+  window.addEventListener("load", function () {
+    setTimeout(startDownload, 400);
+  });
+
+  $("lang").addEventListener("click", function () {
+    var next = lang() === "en" ? "es" : "en";
+    try { localStorage.setItem("drbc-lang", next); } catch (e) {}
+    render();
+  });
+})();
+</script>
+</body>
+</html>
